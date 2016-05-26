@@ -1,5 +1,5 @@
 
-all: bind
+all: bondcmd
 
 .SUFFIXES: .pl
 .pl:
