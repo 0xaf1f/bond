@@ -21,7 +21,7 @@ my %variables = (
 
 foreach my $var (keys %variables) {
     foreach my $element (@{$variables{$var}}) {
-	Env::Path->$var->Append("$prefix/$element");
+	Env::Path->$var->Prepend("$prefix/$element");
     }
     print Env::Path->$var->Shell;
     print "\n";
