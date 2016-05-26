@@ -19,11 +19,22 @@ my %variables = (
     R_LIBS => ['lib/R/site-library'],
     );
 
+my $env_command = '';
+
 foreach my $var (keys %variables) {
     foreach my $element (@{$variables{$var}}) {
 	Env::Path->$var->Prepend("$prefix/$element");
     }
-    print Env::Path->$var->Shell;
-    print "\n";
+    my $next_entry = Env::Path->$var->Shell;
 
+    # Work around an issue in Env::Path where
+    # $var->Shell accumulates the shell commands from
+    # the previous variable settings.
+    my @available_entries = split(";\n",$env_command);
+    foreach my $entry (@available_entries) {
+	$next_entry =~ s/$entry//;
+    }
+    $env_command .= "$next_entry;\n";
 }
+
+print $env_command;
