@@ -6,6 +6,10 @@
 
 bond - change name space
 
+# SYNOPSIS
+
+**bond** *prefix*
+
 # DESCRIPTION
 
 This program imitates the functionality of Plan 9's **bind** command.
