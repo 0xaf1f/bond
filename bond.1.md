@@ -12,8 +12,8 @@ bond - change name space
 
 # DESCRIPTION
 
-This program imitates the functionality of Plan 9's **bind** command.
-While it currently does not work the same way, it should achieve a similar result.
+**bond** activates a directory for use as an installation prefix.
+It works by setting an array of standard environment variables so that installations to the given *prefix* can be directly used by standard tools with no further action.
 
 # BUGS
 
