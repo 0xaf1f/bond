@@ -7,22 +7,18 @@ Prerequisites
 Building the manpage requires pandoc.
 If it's not available, installation will just proceed without it.
 
+On Debian or Debian-derived systems like Ubuntu, the following will install the required dependencies:
+
+	sudo apt-get install libenv-path-perl pandoc
+
 Installation
 ============
 
-./configure
-make
-sudo make install
+	./configure
+	make
+	sudo make install
 
 bond requires integration with your shell in order to work.
-Doing either of the following will achieve this (starting from the next login).
+Doing the following will achieve this if you use bash.
 
-System-wide
------------
-
-sudo ln -s /usr/local/share/bond/init.sh /etc/profile.d/bond.sh
-
-Personal
---------
-
-cat /usr/local/share/bond/init.sh >> ~/.profile
+	echo ". /usr/local/share/bond/init.sh" >> ~/.bashrc
