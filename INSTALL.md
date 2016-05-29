@@ -1,15 +1,9 @@
 Prerequisites
 =============
 
-* perl
-  - Env::Path
-
+The program only requires Perl.
 Building the manpage requires pandoc.
 If it's not available, installation will just proceed without it.
-
-On Debian or Debian-derived systems like Ubuntu, the following will install the required dependencies:
-
-	sudo apt-get install libenv-path-perl pandoc
 
 Installation
 ============
