@@ -14,6 +14,7 @@ sub main {
 	CPATH => ['include'],
 	PERL5LIB => ['lib/perl5/site_perl'],
 	PYTHONPATH => ['lib/python2.7/site-packages'],
+	PYTHONPREFIX => [''],
 	R_LIBS => ['lib/R/site-library'],
 	);
 
