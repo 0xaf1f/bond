@@ -32,6 +32,19 @@ sub main {
 	$env_command .= generate_export_cmd($var, $ENV{$var});
     }
 
+  Make:
+    # * Make is special and has a weird way of defining its include environment
+    #   variable. See:
+    #   <http://lists.gnu.org/archive/html/help-make/2016-05/msg00013.html>
+    #
+    # * Make's include directory is shared with C/C++ headers.
+    $ENV{'MAKEFLAGS'} = '' if !defined $ENV{'MAKEFLAGS'};
+    foreach my $element (@{$variables{'CPATH'}}) {
+	$ENV{'MAKEFLAGS'} = "-I$prefix/$element $ENV{'MAKEFLAGS'}";
+    }
+    $env_command .= generate_export_cmd('MAKEFLAGS', $ENV{'MAKEFLAGS'});
+
+
     print $env_command;
 }
 
