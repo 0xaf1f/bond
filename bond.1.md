@@ -45,6 +45,13 @@ Autoconfiscated package:
 	make
 	make install
 
+Python module:
+
+	# setup-tools
+	python setup.py install --prefix "$basedir"
+	# ...or with pip
+	pip install --install-option="--prefix $basedir"
+
 These packages should now be available for use within the current and any child shell as if they were centrally installed.
 
 # SEE ALSO
