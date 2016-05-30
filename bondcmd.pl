@@ -30,7 +30,7 @@ foreach my $var (keys %variables) {
 	$ENV{$var} = "$prefix/$element:$ENV{$var}"
     }
 
-    $env_command .= "export $var=$ENV{$var}\n";
+    $env_command .= "export $var=\"$ENV{$var}\"\n";
 }
 
 print $env_command;
