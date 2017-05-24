@@ -3,8 +3,10 @@
 use strict;
 use warnings;
 
+use Cwd 'abs_path';
+
 sub main {
-    my $prefix = $ARGV[0];
+    my $prefix = abs_path($ARGV[0]);
 
     my %variables = (
 	PATH    => ['sbin', 'bin'],
