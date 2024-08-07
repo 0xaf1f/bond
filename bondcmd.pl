@@ -15,9 +15,14 @@ sub main {
 	LD_LIBRARY_PATH => ['lib'],
 	CPATH => ['include'],
 	PERL5LIB => ['lib/perl5/site_perl'],
-	PYTHONPATH => ['lib/python2.7/site-packages'],
 	R_LIBS => ['lib/R/site-library'],
 	);
+
+    my ($python_ver) = `python --version` =~ /Python (\d+\.\d+)/;
+    if ($python_ver ne "") {
+	$variables{'PYTHONPATH'} = ["lib/python$python_ver/site-packages"];
+    }
+
 
     my $env_command;
 
