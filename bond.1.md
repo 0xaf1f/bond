@@ -1,6 +1,6 @@
 % BOND(1)
 % Afif Elghraoui <afif@ghraoui.name>
-% May 2016
+% August 2024
 
 # NAME
 
@@ -38,6 +38,10 @@ Perl module:
 	perl Makefile.PL INSTALL_BASE="$basedir"
 	make
 	make install
+
+Ruby gem:
+
+	GEM_HOME="$basedir" gem install ...
 
 Autoconfiscated package:
 

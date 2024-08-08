@@ -15,6 +15,7 @@ sub main {
 	LD_LIBRARY_PATH => ['lib'],
 	CPATH => ['include'],
 	PERL5LIB => ['lib/perl5/site_perl'],
+	GEM_PATH => [''],
 	R_LIBS => ['lib/R/site-library'],
 	);
 
